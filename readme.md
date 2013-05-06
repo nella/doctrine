@@ -21,7 +21,7 @@ Suggest
 Installation
 ------------
 
-Add `"nella/doctrine": "*"` to *composer.json and run `composer update`.
+Add `"nella/doctrine": "dev-master"` and `"nella/console": "dev-master"`  to *composer.json and run `composer update`.
 Edit your *bootstrap.php* and add `Nella\Doctrine\Config\Extension::register($configurator);`
 before `$configurator->createContainer()`.
 
