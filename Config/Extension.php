@@ -159,19 +159,19 @@ class Extension extends \Nette\Config\CompilerExtension
 		}
 
         if(isset($config['dql'])){
-            if($config['dql']['string_functions'] !== NULL){
+            if(isset($config['dql']['string_functions'])){
                 foreach($config['dql']['string_functions'] as $functionName => $className){
                     $configuration->addSetup('addCustomStringFunction', array($functionName, $className));
                 }
             }
 
-            if($config['dql']['numeric_functions'] !== NULL){
+            if(isset($config['dql']['numeric_functions'])){
                 foreach($config['dql']['numeric_functions'] as $functionName => $className){
                     $configuration->addSetup('addCustomNumericFunction', array($functionName, $className));
                 }
             }
 
-            if($config['dql']['datetime_functions'] !== NULL){
+            if(isset($config['dql']['datetime_functions'])){
                 foreach($config['dql']['datetime_functions'] as $functionName => $className){
                     $configuration->addSetup('addCustomDatetimeFunction', array($functionName, $className));
                 }
