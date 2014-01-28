@@ -1,5 +1,5 @@
 {
-	"name": "nella/doctrine",
+	"name": "webcms2/doctrine",
 	"type": "nette-addon",
 	"description": "Doctrine 2 ORM and Migrations addon for Nette Framework",
 	"keywords": ["doctrine", "nette", "orm", "migrations", "nella", "addon"],
