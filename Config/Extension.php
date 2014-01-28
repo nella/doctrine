@@ -211,10 +211,18 @@ class Extension extends \Nette\Config\CompilerExtension
 			->addTag(CExtension::COMMAND_TAG_NAME)
 			->setAutowired(FALSE);
 		$builder->addDefinition($this->prefix('consoleCommandORMClearCacheMetadata'))
-			->setClass('\Doctrine\ORM\Tools\Console\Command\ClearCache\MetadataCommand,')
+			->setClass('Doctrine\ORM\Tools\Console\Command\ClearCache\MetadataCommand')
 			->addTag(CExtension::COMMAND_TAG_NAME)
 			->setAutowired(FALSE);
-
+		$builder->addDefinition($this->prefix('consoleCommandORMClearCacheQuery'))
+			->setClass('Doctrine\ORM\Tools\Console\Command\ClearCache\QueryCommand')
+			->addTag(CExtension::COMMAND_TAG_NAME)
+			->setAutowired(FALSE);
+		$builder->addDefinition($this->prefix('consoleCommandORMClearCacheResult'))
+			->setClass('Doctrine\ORM\Tools\Console\Command\ClearCache\ResultCommand')
+			->addTag(CExtension::COMMAND_TAG_NAME)
+			->setAutowired(FALSE);
+		
 		if ($entityManager) {
 			$builder->addDefinition($this->prefix('consoleHelperEntityManager'))
 				->setClass('Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper', array($entityManager))
