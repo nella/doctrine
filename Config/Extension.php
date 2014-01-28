@@ -210,6 +210,10 @@ class Extension extends \Nette\Config\CompilerExtension
 			->setClass('Doctrine\ORM\Tools\Console\Command\RunDqlCommand')
 			->addTag(CExtension::COMMAND_TAG_NAME)
 			->setAutowired(FALSE);
+		$builder->addDefinition($this->prefix('consoleCommandORMClearCacheMetadata'))
+			->setClass('\Doctrine\ORM\Tools\Console\Command\ClearCache\MetadataCommand,')
+			->addTag(CExtension::COMMAND_TAG_NAME)
+			->setAutowired(FALSE);
 
 		if ($entityManager) {
 			$builder->addDefinition($this->prefix('consoleHelperEntityManager'))
